@@ -1,0 +1,100 @@
+/* General Header */
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #131921;
+  padding: 10px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Left Section */
+.header__left {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  width: 100px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.header__location {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.header__optionLineOne {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.header__optionLineTwo {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Middle Search Bar */
+.header__search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.header__searchDropdown {
+  padding: 5px;
+  border: none;
+  background-color: #f3f3f3;
+}
+
+.header__searchInput {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+
+.header__searchIcon {
+  background-color: #febd69;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Right Section */
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__language {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.header__language img {
+  width: 20px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.header__cart {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+}

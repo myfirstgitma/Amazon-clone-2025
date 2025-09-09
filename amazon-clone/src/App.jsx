@@ -1,4 +1,5 @@
- 
+ import Header from './components/Header/Header'
+ import Footer from "./components/Footer/Footer"
 import './App.css'
 
 function App() {
@@ -6,9 +7,8 @@ function App() {
 
   return (
     <>
-       <div>
-        <h1>Amazon clone 2025</h1>
-       </div>
+       <Header />
+       <Footer />
     </>
   )
 }
