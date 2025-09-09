@@ -58,7 +58,10 @@ const Header = () => {
         </div>
 
         <div className={styles.headerCart}>
-          🛒 <span className={styles.optionLineTwo}>Cart</span>
+            <span>0</span>
+            <a href="/">🛒</a>
+           <span className={styles.optionLineTwo}>Cart</span>
+          
         </div>
       </div>
       
