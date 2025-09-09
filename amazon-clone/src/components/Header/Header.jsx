@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Header.module.css";
+import LowerHeader from "./LowerHeader";
+
 
 const Header = () => {
   return (
@@ -58,7 +60,9 @@ const Header = () => {
           🛒 <span className={styles.optionLineTwo}>Cart</span>
         </div>
       </div>
+      
     </header>
+    
   );
 };
 
