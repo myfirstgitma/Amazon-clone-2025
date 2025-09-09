@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
+import { GoSearch } from "react-icons/go";
 import LowerHeader from "./LowerHeader";
 
 
@@ -31,7 +32,7 @@ const Header = () => {
           type="text"
           placeholder="Search product"
         />
-        <button className={styles.headerSearchIcon}>🔍</button>
+        <button className={styles.headerSearchIcon}> <GoSearch /> </button>
       </div>
 
       {/* Right Section */}
