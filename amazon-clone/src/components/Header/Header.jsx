@@ -3,7 +3,6 @@ import styles from "./Header.module.css";
 import { GoSearch } from "react-icons/go";
 import LowerHeader from "./LowerHeader";
 
-
 const Header = () => {
   return (
     <header className={styles.header}>
@@ -32,7 +31,10 @@ const Header = () => {
           type="text"
           placeholder="Search product"
         />
-        <button className={styles.headerSearchIcon}> <GoSearch /> </button>
+        <button className={styles.headerSearchIcon}>
+          {" "}
+          <GoSearch />{" "}
+        </button>
       </div>
 
       {/* Right Section */}
@@ -58,15 +60,15 @@ const Header = () => {
         </div>
 
         <div className={styles.headerCart}>
-            <span>0</span>
+          <div>
             <a href="/">🛒</a>
-           <span className={styles.optionLineTwo}>Cart</span>
-          
+            <span>0</span>
+          </div>
+
+          <span className={styles.optionLineTwo}>Cart</span>
         </div>
       </div>
-      
     </header>
-    
   );
 };
 

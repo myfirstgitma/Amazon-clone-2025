@@ -91,10 +91,40 @@
   cursor: pointer;
 }
 
+/* Updated Cart Styling */
 .headerCart {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  font-size: 18px;
-  margin-left: 10px;
+  margin-left: 15px;
   cursor: pointer;
+}
+
+.headerCart > div {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.headerCart > div > a {
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+}
+
+.headerCart > div > span {
+  position: absolute;
+  top: -8px;
+  right: -2px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #131921;
 }
