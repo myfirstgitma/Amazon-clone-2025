@@ -1,0 +1,18 @@
+/* Carousel.module.css */
+.slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.selected {
+  opacity: 1;
+  position: relative;
+}
+
+.slider {
+  overflow: hidden;
+}
