@@ -4,6 +4,7 @@ import './App.css'
 import LowerHeader from './components/Header/LowerHeader'
 import Carousal from './components/carasoul/Carousal'
 import Catagory from './components/category/Category'
+import Product from './components/Product/Product'
 
 function App() {
    
@@ -14,6 +15,7 @@ function App() {
        <LowerHeader/>
        <Carousal />
        <Catagory/>
+       <Product />
        <Footer />
     </>
   )
