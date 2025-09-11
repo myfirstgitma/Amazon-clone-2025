@@ -45,7 +45,7 @@ const Header = () => {
             alt="flag"
           />
           <select>
-            <option value="en">EN</option>
+            <option value="en">NL</option>
           </select>
         </div>
 
