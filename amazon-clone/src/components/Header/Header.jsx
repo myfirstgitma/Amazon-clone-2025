@@ -2,19 +2,21 @@ import React from "react";
 import styles from "./Header.module.css";
 import { GoSearch } from "react-icons/go";
 import LowerHeader from "./LowerHeader";
+import {Link} from "react-router-dom"
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <>
+<header className={styles.header}>
       {/* Left Section */}
       <div className={styles.headerLeft}>
-        <a href="/">
+        <Link to="/">
           <img
             className={styles.headerLogo}
             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
             alt="amazon_logo"
           />
-        </a>
+        </Link>
         <div className={styles.headerLocation}>
           <p className={styles.optionLineOne}>Delivered to</p>
           <span className={styles.optionLineTwo}>Netherlands</span>
@@ -55,20 +57,27 @@ const Header = () => {
         </div>
 
         <div className={styles.headerOption}>
-          <span className={styles.optionLineOne}>Returns</span>
-          <span className={styles.optionLineTwo}>& Orders</span>
+          <Link to="/orders">
+            <span className={styles.optionLineOne}>Returns</span>
+            <span className={styles.optionLineTwo}>& Orders</span>
+          </Link>
         </div>
 
         <div className={styles.headerCart}>
           <div>
-            <a href="/">🛒</a>
+            <Link to="/cart">🛒</Link>
             <span>0</span>
           </div>
 
           <span className={styles.optionLineTwo}>Cart</span>
         </div>
       </div>
+     
     </header>
+    <LowerHeader/>
+    </>
+    
+    
   );
 };
 
