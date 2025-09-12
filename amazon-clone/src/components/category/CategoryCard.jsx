@@ -1,10 +1,10 @@
 import React from "react";
-
-import styles from "./Category.module.css"; // Import your CSS module
+import { Link } from "react-router-dom";
+import styles from "./Category.module.css";
 
 const CategoryCard = ({ data }) => {
   return (
-    <div className={styles.categoryCard}>
+    <Link to={`/category/${data.name}`} className={styles.categoryCard}>
       <div className={styles.categoryContent}>
         <h2 className={styles.categoryTitle}>{data.title}</h2>
         <div className={styles.categoryImageContainer}>
@@ -14,12 +14,9 @@ const CategoryCard = ({ data }) => {
             className={styles.categoryImage}
           />
         </div>
-
-        <a href="#" className={styles.categoryShopLink}>
-          shop now
-        </a>
+        <span className={styles.categoryShopLink}>Shop Now</span>
       </div>
-    </div>
+    </Link>
   );
 };
 

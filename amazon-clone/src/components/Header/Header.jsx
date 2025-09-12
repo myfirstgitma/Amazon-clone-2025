@@ -52,8 +52,10 @@ const Header = () => {
         </div>
 
         <div className={styles.headerOption}>
+          <Link to="/auth">
           <span className={styles.optionLineOne}>Hello, Sign in</span>
           <span className={styles.optionLineTwo}>Account & Lists</span>
+          </Link>
         </div>
 
         <div className={styles.headerOption}>
