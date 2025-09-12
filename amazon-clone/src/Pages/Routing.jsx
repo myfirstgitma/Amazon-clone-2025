@@ -7,6 +7,7 @@ import Payment from "./Payment/Payment";
 import Orders from "./Orders/Orders";
 import Cart from "./Cart/Cart";
 import Results from "./Results/Results"
+import ProductDetail from "./ProductDetail/ProductDetail"
 
 const Routing = () => {
   return (
@@ -18,6 +19,7 @@ const Routing = () => {
         <Route path="/orders" element={<Orders />} />
         <Route path="/category/:categoryName" element={<Results />}/>
         <Route path="/cart" element={<Cart />} />
+         <Route path="/products/:productId" element={<ProductDetail />}/>
       </Routes>
     </LayOut>
   );
