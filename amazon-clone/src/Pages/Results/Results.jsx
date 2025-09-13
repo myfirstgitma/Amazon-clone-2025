@@ -4,27 +4,32 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { productUrl } from "../../Api/endPoints";
 import styles from "./Results.module.css";
+import Loader from "../../components/Loader/Loader"; // ✅ Import Loader
 
 const Results = () => {
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(true); // ✅ Add loading state
   const { categoryName } = useParams();
 
   useEffect(() => {
-    // console.log("Category name:", categoryName); 
-    
     if (!categoryName) {
       console.log("No category name provided");
+      setLoading(false);
       return;
     }
 
+    setLoading(true); // ✅ Start loading
     axios
       .get(`${productUrl}/products/category/${categoryName}`)
       .then((res) => {
-         console.log("API Response:", res.data); 
+        console.log("API Response:", res.data);
         setResults(res.data);
       })
       .catch((err) => {
         console.error("Error fetching results:", err);
+      })
+      .finally(() => {
+        setLoading(false); // ✅ Stop loading
       });
   }, [categoryName]);
 
@@ -33,7 +38,9 @@ const Results = () => {
       <div className={styles.container}>
         <h2 className={styles.title}>Results for: {categoryName}</h2>
 
-        {results.length === 0 ? (
+        {loading ? (
+          <Loader /> // ✅ Show loader while fetching
+        ) : results.length === 0 ? (
           <p className={styles.empty}>No products found in this category.</p>
         ) : (
           <ul className={styles.list}>

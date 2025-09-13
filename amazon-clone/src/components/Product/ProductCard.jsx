@@ -4,18 +4,25 @@ import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import styles from "./Product.module.css";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
-  const { image, title, id, rating, price } = product;
+const ProductCard = ({ product, flex }) => {
+  const { image, title, id, rating, price, description } = product;
 
   return (
-    <div className={styles.card}>
-      <Link to={`/products/${id}`} className={styles.imageWrapper}>
-        <img src={image} alt={title} className={styles.image} />
-      </Link>
-      <div className={styles.details}>
+    <div className={`${flex ? styles.singleCard : styles.card}`}>
+      {/* Two-column layout */}
+      <div className={styles.leftColumn}>
+        <Link to={`/products/${id}`}>
+          <img src={image} alt={title} className={styles.image} />
+        </Link>
+      </div>
+
+      <div className={styles.rightColumn}>
         <h3 className={styles.title}>{title}</h3>
-        
-        {/* ✅ only render rating if it exists */}
+
+        {flex && description && (
+          <p className={styles.description}>{description}</p>
+        )}
+
         {rating ? (
           <div className={styles.rating}>
             <Rating value={rating.rate} precision={0.1} readOnly />
@@ -28,6 +35,7 @@ const ProductCard = ({ product }) => {
         <div className={styles.price}>
           <CurrencyFormat amount={price} />
         </div>
+
         <button className={styles.button}>Add to Cart</button>
       </div>
     </div>
