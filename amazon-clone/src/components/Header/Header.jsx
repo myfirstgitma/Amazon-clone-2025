@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Header.module.css";
 import { GoSearch } from "react-icons/go";
 import LowerHeader from "./LowerHeader";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import { DataContext } from "../DataProvider/DataProvider";
+
 
 const Header = () => {
+  const [{basket}, dispatch] =useContext(DataContext)
+ 
   return (
     <>
 <header className={styles.header}>
@@ -68,7 +72,7 @@ const Header = () => {
         <div className={styles.headerCart}>
           <div>
             <Link to="/cart">🛒</Link>
-            <span>0</span>
+            <span>{basket.length}</span>
           </div>
 
           <span className={styles.optionLineTwo}>Cart</span>
