@@ -1,0 +1,54 @@
+.cartContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.basket {
+  flex: 0.7;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.paymentBox {
+  flex: 0.3;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+.paymentBox p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.giftOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.checkoutBtn {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  background: #f0c14b;
+  border: 1px solid #a88734;
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  color: #111;
+}
+
+.checkoutBtn:hover {
+  background: #ddb347;
+}
