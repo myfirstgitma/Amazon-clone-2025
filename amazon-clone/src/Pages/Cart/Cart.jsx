@@ -9,8 +9,15 @@ import styles from "./Cart.module.css";
 const Cart = () => {
   const [{ basket, user }] = useContext(DataContext);
 
-  // calculate subtotal
-  const total = basket?.reduce((amount, item) => amount + item.price, 0);
+  // Calculate subtotal considering quantity (amount) of each item
+  const total = basket?.reduce((amount, item) => {
+    return amount + (item.price * (item.amount || 1));
+  }, 0);
+
+  // Calculate total number of items considering quantities
+  const totalItems = basket?.reduce((count, item) => {
+    return count + (item.amount || 1);
+  }, 0);
 
   return (
     <>
@@ -24,7 +31,7 @@ const Cart = () => {
           ) : (
             basket.map((item, i) => (
               <ProductCard
-                key={i}
+                key={item.id || i} // Use item.id if available, fallback to index
                 product={item}
                 renderDesc={true}
                 renderAdd={false}
@@ -37,8 +44,8 @@ const Cart = () => {
         {basket?.length !== 0 && (
           <div className={styles.paymentBox}>
             <p>
-              Subtotal ({basket?.length} item
-              {basket?.length > 1 ? "s" : ""}):{" "}
+              Subtotal ({totalItems} item
+              {totalItems > 1 ? "s" : ""}):{" "}
               <strong>
                 <CurrencyFormat amount={total} />
               </strong>
