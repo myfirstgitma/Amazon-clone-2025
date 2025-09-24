@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./Header.module.css";
 import { GoSearch } from "react-icons/go";
 import LowerHeader from "./LowerHeader";
@@ -12,6 +12,7 @@ import { auth } from "../../utitlity/fireBase";
 const Header = () => {
   const [{ user, basket }, dispatch] = useContext(DataContext);
   const navigate = useNavigate();
+  
 
   const handleLogout = async () => {
     try {

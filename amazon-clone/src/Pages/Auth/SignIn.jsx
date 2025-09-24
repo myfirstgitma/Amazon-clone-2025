@@ -10,6 +10,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import { DataContext } from "../../components/DataProvider/DataProvider";
 import { Type } from "../../utitlity/action.type"; // Import Type from action.type file
+import { onAuthStateChanged } from "firebase/auth";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -39,6 +40,28 @@ const SignIn = () => {
       navigate("/");
     }
   }, [user, navigate]);
+
+  // new useEffect
+  useEffect(() => {
+     
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      if (authUser) {
+      
+        dispatch({
+          type: Type.SET_USER,
+          user: authUser,
+        });
+      } else {
+    
+        dispatch({
+          type: Type.SET_USER,
+          user: null,
+        });
+      }
+    });
+
+    return () => unsubscribe(); 
+  }, [dispatch]);
 
   const testNavigation = () => {
     console.log("🧪 Testing navigation...");
@@ -160,9 +183,7 @@ const SignIn = () => {
         
         <br />
          
-        {/* <br />
-        User in Context: {user ? `${user.email} (${user.uid})` : "None"}
-        <br /> */}
+       
         <button onClick={testNavigation} style={{ margin: "5px 0" }}>
      
         </button>
