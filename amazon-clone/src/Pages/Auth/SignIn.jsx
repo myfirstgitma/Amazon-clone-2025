@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+
 import styles from "./SignIn.module.css";
 import { auth } from "../../utitlity/fireBase";
 import {
@@ -24,19 +25,19 @@ const SignIn = () => {
   const [{ user }, dispatch] = useContext(DataContext);
   const navigate = useNavigate();
   const location = useLocation();
-
-  // Debug: Log component mount and user state changes
+ 
+   
   useEffect(() => {
-    console.log("🔍 SignIn component mounted");
-    console.log("📍 Current location:", location.pathname);
-    console.log("👤 Current user in context:", user);
+    console.log(" SignIn component mounted");
+    console.log(" Current location:", location.pathname);
+    console.log(" Current user in context:", user);
   }, []);
 
   useEffect(() => {
-    console.log("👤 User state changed:", user);
-    // If user is already signed in, redirect immediately
+    console.log(" User state changed:", user);
+    
     if (user) {
-      console.log("✅ User is signed in, attempting redirect");
+      console.log(" User is signed in, attempting redirect");
       navigate("/");
     }
   }, [user, navigate]);
@@ -64,10 +65,10 @@ const SignIn = () => {
   }, [dispatch]);
 
   const testNavigation = () => {
-    console.log("🧪 Testing navigation...");
+    console.log(" Testing navigation...");
     try {
       navigate("/");
-      console.log("✅ Test navigation successful");
+      console.log(" Test navigation successful");
     } catch (error) {
       console.error(" Test navigation failed:", error);
     }
@@ -171,7 +172,7 @@ const SignIn = () => {
     <div className={styles.container}>
       <h2 className={styles.title}>Sign In</h2>
 
-      {/* DEBUG SECTION - Remove in production */}
+     
       <div
         style={{
           background: "#f0f0f0",

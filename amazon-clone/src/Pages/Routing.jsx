@@ -10,6 +10,7 @@ import Results from "./Results/Results";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import { Elements } from "@stripe/react-stripe-js"; // ✅ Correct import
 import { loadStripe } from "@stripe/stripe-js";
+import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
 
 
 const stripePromise = loadStripe(
@@ -25,9 +26,11 @@ const Routing = () => {
         <Route
           path="/payments"
           element={
-            <Elements stripe={stripePromise}>
-              <Payment />
-            </Elements>
+            <ProtectedRoute msg={"you must log in to pay"} redirect={"/payments"}>
+              <Elements stripe={stripePromise}>
+                <Payment />
+              </Elements>
+            </ProtectedRoute>
           }
         />
         <Route path="/orders" element={<Orders />} />

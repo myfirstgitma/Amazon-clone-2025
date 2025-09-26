@@ -1,21 +1,23 @@
-import { initializeApp } from "firebase/app";
-// Import needed services for authentication and firestore
+//to register
+import firebase from "firebase/compat/app";
+//auth:autentication
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore"; // Changed this line
+import "firebase/compat/firestore";
+import "firebase/compat/auth";
 
-// Remove these compat imports - you're mixing v9 and compat syntax
-// import "firebase/compat/firestore"
-// import "firebase/compat/auth"
-
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAWnmhxrlJZ4hbrdn_f1VkNYQ7gyH-33-M",
-  authDomain: "project-5da10.firebaseapp.com",
-  projectId: "project-5da10",
-  storageBucket: "project-5da10.firebasestorage.app",
-  messagingSenderId: "875139768850",
-  appId: "1:875139768850:web:8acd64fb60cd584dffaecb",
+  apiKey: "AIzaSyBlvT7L4y4FXzw0Cdtd9Qfc9dYWLLNLQtM",
+  authDomain: "clone-e1bfe.firebaseapp.com",
+  projectId: "clone-e1bfe",
+  storageBucket: "clone-e1bfe.firebasestorage.app",
+  messagingSenderId: "280083990947",
+  appId: "1:280083990947:web:51e437e8339ab340493216",
 };
 
-const app = initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+//set file to auth related
 export const auth = getAuth(app);
-export const db = getFirestore(app); // Changed this line
+//database
+export const db = app.firestore();
