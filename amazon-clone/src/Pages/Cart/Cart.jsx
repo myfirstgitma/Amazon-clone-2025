@@ -41,7 +41,7 @@ const Cart = () => {
           <h2>Hello {user ? user.email : "Guest"}</h2>
           <h3>Your Shopping Basket</h3>
           <hr />
-         // Replace your basket mapping section with this updated version:
+         
 
 {basket.length === 0 ? (
   <p>No items found</p>
